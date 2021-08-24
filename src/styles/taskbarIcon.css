@@ -1,6 +1,7 @@
-img {
-  width: 40px;
+.main-taskbar-icon>img {
+    width: 50px;
 }
+
 .main-taskbar-icon {
-  padding: 10px;
+    padding: 10px;
 }
