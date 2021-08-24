@@ -1,0 +1,10 @@
+.note-container {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  resize: both;
+  overflow: hidden;
+}
