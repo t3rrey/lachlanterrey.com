@@ -1,13 +1,11 @@
 import React from "react";
+import "../styles/taskbarIcon.css";
 
 const TaskbarIcon = (props) => {
   return (
-    <li>
-      <span>{props.title}</span>
-      <a href="#">
-        <img src={props.image} />
-      </a>
-    </li>
+    <div className="main-taskbar-icon">
+      <img src={props.image} alt={props.title} title={props.title} />
+    </div>
   );
 };
 

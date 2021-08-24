@@ -1,4 +1,5 @@
 import Taskbar from "./components/Taskbar";
+import "./styles/App.css";
 
 function App() {
   return (
