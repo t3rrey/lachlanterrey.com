@@ -2,38 +2,100 @@ import React, { useState } from "react";
 import "../styles/stickynote.css";
 import crossIcon from "../assets/icons/crossIcon.svg";
 import plusIcon from "../assets/icons/plusIcon.svg";
-import Draggable from "react-draggable";
-import { ResizeProvider, ResizeConsumer } from "react-resize-context";
+import { Rnd } from "react-rnd";
+import { getNodeText } from "@testing-library/dom";
+
+const defaultSize = {
+  width: 200,
+  height: 200,
+};
+const defaultNotes = [
+  {
+    text: "Hello world",
+    x: 100,
+    y: 100,
+    ...defaultSize,
+  },
+  {
+    text: "Hello world!!!",
+    x: 330,
+    y: 100,
+    width: 220,
+    height: 200,
+  },
+];
 
 const StickyNote = () => {
-  const [size, setSize] = useState({});
+  const [notes, setNotes] = useState(defaultNotes);
 
-  const getDatasetBySize = (size) => ({
-    widthRange: size.width > 200 ? "large" : "small",
-    heightRange: size.height > 200 ? "large" : "small",
-  });
-
-  const handleSizeChanged = (size) => {
-    setSize({ size });
+  const close = (index) => {
+    const newNotes = notes.filter((note, i) => i !== index);
+    setNotes(newNotes);
   };
+  const addNote = ({ x, y, width, height }) => {
+    const position = {
+      x: x + width + 20,
+      y,
+    };
+    setNotes([...notes, { text: "", ...position, ...defaultSize }]);
+  };
+  const updateNote = (index, value) => {
+    notes[index].text = value;
+    setNotes([...notes]);
+  };
+  const onDragResize = (note, event, corner, target, size, position) => {
+    console.log({ event, corner, target, size, position });
+    if (!target) {
+      target = corner.node;
+      position = {
+        x: corner.x,
+        y: corner.y,
+      };
+    }
+    note.x = position.x;
+    note.y = position.y;
+    note.width = target.clientWidth;
+    note.height = target.clientHeight;
+    setNotes([...notes]);
+  };
+  console.log(notes);
 
-  return (
-    <ResizeProvider>
-      <ResizeConsumer
-        className="container"
-        onSizeChanged={handleSizeChanged}
-        updateDatasetBySize={getDatasetBySize}
-      >
-        <div className="main-sticky-wrapper">
-          <div className="sticky-menu">
-            <img className="menu-icon" src={crossIcon} alt="" />
-            <img className="menu-icon" src={plusIcon} alt="" />
-          </div>
-          <div className="sticky-content"></div>
+  return notes.map((note, index) => (
+    <Rnd
+      default={{
+        x: note.x,
+        y: note.y,
+        width: note.width,
+        height: note.height,
+      }}
+      onDrag={onDragResize.bind(null, note)}
+      onResize={onDragResize.bind(null, note)}
+      key={index}
+    >
+      <div className="main-sticky-wrapper">
+        <div className="sticky-menu">
+          <img
+            className="menu-icon"
+            src={crossIcon}
+            alt=""
+            onClick={() => close(index)}
+          />
+          <img
+            className="menu-icon"
+            src={plusIcon}
+            alt=""
+            onClick={() => addNote(note)}
+          />
         </div>
-      </ResizeConsumer>
-    </ResizeProvider>
-  );
+        <textarea
+          value={note.text}
+          className="sticky-content"
+          placeholder="Some text"
+          onChange={(event) => updateNote(index, event.target.value)}
+        ></textarea>
+      </div>
+    </Rnd>
+  ));
 };
 
 export default StickyNote;
