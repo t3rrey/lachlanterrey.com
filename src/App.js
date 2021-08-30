@@ -1,14 +1,16 @@
-// import Taskbar from "./components/Taskbar";
-// import "./styles/App.css";
+import Taskbar from "./components/Taskbar";
+import WeatherApp from "./components/WeatherApp";
+import "./styles/App.css";
 // import StickyNote from "./components/StickyNote";
-// import Map from "./components/Map2";
+// import NewPDF from "./components/NewPDF";
+
+// import pdf from "./sample.pdf";
+
 function App() {
   return (
     <div className="App">
-      <iframe
-        src="https://www.google.com"
-        title="W3Schools Free Online Web Tutorials"
-      ></iframe>
+      <WeatherApp lat="-34" lon="151" />
+      <Taskbar />
     </div>
   );
 }
