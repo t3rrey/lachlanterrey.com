@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../styles/weather.css";
+import locationButton from "../assets/icons/locationButton.svg";
 const APIKEY = "cb003ec57d263f77619fc9e12e90b5a4";
 const unit = "metric";
 
@@ -30,7 +31,12 @@ const WeatherApp = (props) => {
   } else {
     return (
       <div className="main-wrapper">
-        <div className="main-search-wrapper"></div>
+        <div className="main-search-wrapper">
+          <div className="search-wrapper">
+            <input type="text" />
+            <img src={locationButton} alt="" width="20" />
+          </div>
+        </div>
         <div className="main-address-wrapper">
           <h1>{weather.timezone}</h1>
         </div>
