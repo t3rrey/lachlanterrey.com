@@ -22,7 +22,6 @@ function Dropzone(props) {
   return (
     <div {...getRootProps()} style={{ height: "100vh" }} onClick={null}>
       <input {...getInputProps()} />
-      <p>Drag 'n' drop some files here, or click to select files</p>
     </div>
   );
 }
