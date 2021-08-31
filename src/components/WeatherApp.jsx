@@ -5,6 +5,10 @@ import locationButton from "../assets/icons/locationButton.svg";
 const APIKEY = "cb003ec57d263f77619fc9e12e90b5a4";
 const unit = "metric";
 
+const weatherClasses = {
+  "clear sky": "clear-sky",
+};
+
 const WeatherApp = (props) => {
   const [weather, setWeather] = useState({});
   const [loaded, setLoaded] = useState(false);
@@ -30,7 +34,12 @@ const WeatherApp = (props) => {
     return <div>Loading...</div>;
   } else {
     return (
-      <div className="main-wrapper">
+      <div
+        className={`main-wrapper ${weather.current.weather[0].description.replace(
+          " ",
+          "-"
+        )}`}
+      >
         <div className="main-search-wrapper">
           <div className="search-wrapper">
             <input type="text" />

@@ -6,6 +6,12 @@
   display: flex;
   flex-direction: column;
   margin-top: 0px;
+  background-size: cover;
+  background-position: center;
+}
+
+.main-wrapper.clear-sky {
+  background-image: url("../assets/weather-backgrounds/cloudy-day.jpg");
 }
 
 .main-search-wrapper {

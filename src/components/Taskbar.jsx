@@ -7,15 +7,26 @@ import mapIcon from "../assets/icons/mapIcon.svg";
 import stickyNoteIcon from "../assets/icons/stickyNoteIcon.svg";
 import settingsIcon from "../assets/icons/settingsIcon.svg";
 
-const Taskbar = () => {
+const Taskbar = ({ addStickyNote, openedApps, setOpenedApps }) => {
+  const handleClick = (app) => {
+    setOpenedApps((apps) => {
+      // Already opened => Now close
+      if (apps.includes(app)) {
+        return apps.filter((appName) => appName !== app);
+      } else {
+        return [...apps, app];
+      }
+    });
+  };
+
   return (
     <div className="main-taskbar-wrapper">
       <div className="taskbar">
-        <TaskbarIcon image={personIcon} />
-        <TaskbarIcon image={calculatorIcon} />
-        <TaskbarIcon image={mapIcon} />
-        <TaskbarIcon image={stickyNoteIcon} />
-        <TaskbarIcon image={settingsIcon} />
+        <TaskbarIcon image={personIcon} onClick={() => {}} />
+        <TaskbarIcon image={calculatorIcon} name="calculator" onClick={handleClick} />
+        <TaskbarIcon image={mapIcon} onClick={() => handleClick("weather")} />
+        <TaskbarIcon image={stickyNoteIcon} onClick={addStickyNote} />
+        <TaskbarIcon image={settingsIcon} onClick={() => {}} />
       </div>
     </div>
   );

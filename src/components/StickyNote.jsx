@@ -11,12 +11,14 @@ const defaultSize = {
 };
 const defaultNotes = [
   {
+    id: 1,
     text: "Hello world",
     x: 100,
     y: 100,
     ...defaultSize,
   },
   {
+    id: 2,
     text: "Hello world!!!",
     x: 330,
     y: 100,
@@ -37,13 +39,14 @@ const StickyNote = () => {
       x: x + width + 20,
       y,
     };
-    setNotes([...notes, { text: "", ...position, ...defaultSize }]);
+    const id = notes[notes.length - 1].id + 1;
+    setNotes([...notes, { id, text: "", ...position, ...defaultSize }]);
   };
   const updateNote = (index, value) => {
     notes[index].text = value;
     setNotes([...notes]);
   };
-  const onDragResize = (note, event, corner, target, size, position) => {
+  const onDragResize = (index, event, corner, target, size, position) => {
     console.log({ event, corner, target, size, position });
     if (!target) {
       target = corner.node;
@@ -52,6 +55,7 @@ const StickyNote = () => {
         y: corner.y,
       };
     }
+    const note = notes[index];
     note.x = position.x;
     note.y = position.y;
     note.width = target.clientWidth;
@@ -68,9 +72,9 @@ const StickyNote = () => {
         width: note.width,
         height: note.height,
       }}
-      onDrag={onDragResize.bind(null, note)}
-      onResize={onDragResize.bind(null, note)}
-      key={index}
+      onDrag={onDragResize.bind(null, index)}
+      onResize={onDragResize.bind(null, index)}
+      key={note.id}
     >
       <div className="main-sticky-wrapper">
         <div className="sticky-menu">
