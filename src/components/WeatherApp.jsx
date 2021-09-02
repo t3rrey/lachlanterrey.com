@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../styles/weather.css";
-import locationButton from "../assets/icons/locationButton.svg";
+import AddressSearch from "../components/AddressSearch";
+
 const APIKEY = "cb003ec57d263f77619fc9e12e90b5a4";
 const unit = "metric";
 
@@ -12,11 +13,12 @@ const weatherClasses = {
 const WeatherApp = (props) => {
   const [weather, setWeather] = useState({});
   const [loaded, setLoaded] = useState(false);
+  const [position, setPosition] = useState({ lat: 30, lng: 150 });
 
   useEffect(() => {
     axios
       .get(
-        `https://api.openweathermap.org/data/2.5/onecall?lat=${props.lat}&lon=${props.lon}&units=${unit}&appid=${APIKEY}`
+        `https://api.openweathermap.org/data/2.5/onecall?lat=${position.lat}&lon=${position.lng}&units=${unit}&appid=${APIKEY}`
       )
       .then((res) => {
         console.log(res);
@@ -26,9 +28,9 @@ const WeatherApp = (props) => {
       .catch((err) => {
         console.error(err);
       });
-  }, []);
+  }, [position]);
 
-  const setAppBackground = () => {};
+  console.log({ latLng: position });
 
   if (!loaded) {
     return <div>Loading...</div>;
@@ -41,11 +43,9 @@ const WeatherApp = (props) => {
         )}`}
       >
         <div className="main-search-wrapper">
-          <div className="search-wrapper">
-            <input type="text" />
-            <img src={locationButton} alt="" width="20" />
-          </div>
+          <AddressSearch setLatLng={setPosition} />
         </div>
+
         <div className="main-address-wrapper">
           <h1>{weather.timezone}</h1>
         </div>
@@ -60,6 +60,11 @@ const WeatherApp = (props) => {
         </div>
         <div className="main-hourly-wrapper"></div>
         <div className="main-weekly-wrapper"></div>
+        {position && (
+          <div className="">
+            {position.lat} - {position.lng}
+          </div>
+        )}
       </div>
     );
   }

@@ -20,7 +20,17 @@ function Dropzone(props) {
   const { getRootProps, getInputProps } = useDropzone({ onDrop });
 
   return (
-    <div {...getRootProps()} style={{ height: "100vh" }} onClick={null}>
+    <div
+      {...getRootProps()}
+      style={{
+        height: "100vh",
+        position: "absolute",
+        top: "0",
+        width: "100%",
+        zIndex: 1,
+      }}
+      onClick={null}
+    >
       <input {...getInputProps()} />
     </div>
   );

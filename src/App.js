@@ -19,7 +19,7 @@ function App() {
       {pdf && <NewPDF pdf={pdf} />}
 
       {/* Sticky notes */}
-      {openedApps.includes("weather") && <WeatherApp lat="-34" lon="151" />}
+      {openedApps.includes("weather") && <WeatherApp />}
 
       {/* Taskbar */}
       <Taskbar openedApps={openedApps} setOpenedApps={setOpenedApps} />

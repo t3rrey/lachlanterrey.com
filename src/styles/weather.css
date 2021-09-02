@@ -16,6 +16,7 @@
 
 .main-search-wrapper {
 }
+
 .search-wrapper {
   margin: 5px;
   border: 1px solid grey;
@@ -23,8 +24,21 @@
   background: grey;
   display: flex;
   flex-direction: row;
+  position: relative;
 }
-
+.autocomplete-dropdown-container {
+  position: absolute;
+  width: 100%;
+  top: 25px;
+  border: 1px solid #ccc;
+  border-top: 0;
+  background: #eee;
+  border-radius: 0 0 15px 15px;
+  overflow: hidden;
+}
+.search-wrapper.searching {
+  border-radius: 15px 15px 0 0;
+}
 .search-wrapper input {
   flex-grow: 2;
   padding: 5px;
