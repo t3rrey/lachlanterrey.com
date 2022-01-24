@@ -1,17 +1,22 @@
 .App .main-taskbar-wrapper {
-  width: 100%;
-  z-index: 1;
-  position: absolute;
-  margin-bottom: 10px;
-  bottom: 0;
+    width: 100%;
+    z-index: 1;
+    position: absolute;
+    margin-bottom: 10px;
+    bottom: 0;
 }
 
 .App .taskbar {
-  display: flex;
-  flex-direction: row;
-  background-color: rgb(230, 235, 237, 0.4);
-  border: 1px solid white;
-  border-radius: 15px;
-  width: 80%;
-  margin: auto;
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(230, 235, 237, 0.4);
+    border: 1px solid white;
+    border-radius: 15px;
+    width: 80%;
+    margin: auto;
+}
+
+.taskbar-icon-wrapper {
+    display: flex;
+    margin: auto;
 }
