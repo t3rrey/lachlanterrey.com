@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "../styles/weather.css";
-import AddressSearch from "../components/AddressSearch";
+import "../../styles/weather.css";
+import AddressSearch from "../WeatherApp/AddressSearch";
 
 const APIKEY = "cb003ec57d263f77619fc9e12e90b5a4";
 const unit = "metric";

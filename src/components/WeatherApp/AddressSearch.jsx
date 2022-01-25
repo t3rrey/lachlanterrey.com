@@ -3,7 +3,7 @@ import PlacesAutocomplete, {
   geocodeByAddress,
   getLatLng,
 } from "react-places-autocomplete";
-import locationButton from "../assets/icons/locationButton.svg";
+import locationButton from "../../assets/icons/locationButton.svg";
 
 class LocationSearchInput extends React.Component {
   constructor(props) {
