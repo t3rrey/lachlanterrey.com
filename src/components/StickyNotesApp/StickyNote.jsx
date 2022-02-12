@@ -11,15 +11,16 @@ const defaultSize = {
 const defaultNotes = [
   {
     id: 1,
-    text: "Hello world",
-    x: 100,
-    y: 100,
-    ...defaultSize,
+    text: "Welcome to my Portfolio!",
+    x: 250,
+    y: 200,
+    width: 500,
+    height: 300,
   },
   {
     id: 2,
     text: "Hello world!!!",
-    x: 330,
+    x: 830,
     y: 100,
     width: 220,
     height: 200,

@@ -6,6 +6,7 @@ import calculatorIcon from "../assets/icons/calculatorIcon.svg";
 import mapIcon from "../assets/icons/mapIcon.svg";
 import stickyNoteIcon from "../assets/icons/stickyNoteIcon.svg";
 import settingsIcon from "../assets/icons/settingsIcon.svg";
+import browserIcon from "../assets/icons/browserIcon.svg";
 
 const Taskbar = ({ addStickyNote, openedApps, setOpenedApps }) => {
   const handleClick = (app) => {
@@ -25,10 +26,11 @@ const Taskbar = ({ addStickyNote, openedApps, setOpenedApps }) => {
         <div className="taskbar-icon-wrapper">
           <TaskbarIcon image={personIcon} onClick={() => {}} />
           <TaskbarIcon
-            image={calculatorIcon}
+            image={calculatorIcon} 
             name="calculator"
             onClick={handleClick}
           />
+          <TaskbarIcon image={browserIcon} />
           <TaskbarIcon image={mapIcon} onClick={() => handleClick("weather")} />
           <TaskbarIcon image={stickyNoteIcon} onClick={addStickyNote} />
           <TaskbarIcon image={settingsIcon} onClick={() => {}} />

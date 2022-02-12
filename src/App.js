@@ -5,6 +5,7 @@ import "./styles/App.css";
 import StickyNote from "./components/StickyNotesApp/StickyNote.jsx";
 import NewPDF from "./components/PDFViewer/NewPDF";
 import Dropzone from "./components/PDFViewer/Dropzone";
+import Browser from "./components/Browser/Browser";
 
 function App() {
   const [openedApps, setOpenedApps] = useState([]);
@@ -18,6 +19,7 @@ function App() {
       {/* Sticky notes */} {openedApps.includes("weather") && <WeatherApp />}
       {/* Taskbar */}
       <Taskbar openedApps={openedApps} setOpenedApps={setOpenedApps} />
+      <Browser />
     </div>
   );
 }
