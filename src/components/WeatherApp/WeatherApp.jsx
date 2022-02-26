@@ -1,14 +1,40 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../../styles/weather.css";
-import AddressSearch from "../WeatherApp/AddressSearch";
+import styled from "styled-components";
+import AddressSearch from "./AddressSearch";
+
+const WeatherAppContainer = styled.div`
+  width: 700px;
+  height: 500px;
+  background: blue;
+`;
+
+const AddressMetaDataContainer = styled.div``;
+
+const AddressHeader = styled.h1`
+  color: white;
+  font-size: 20px;
+  font-family: "Open Sans", sans-serif;
+  font-family: "Space Grotesk", sans-serif;
+  padding: 10px 0px 0px 10px;
+`;
+
+const DateHeader = styled.h2`
+  color: white;
+  font-size: 15px;
+  font-family: "Space Grotesk", sans-serif;
+  padding: 0px 0px 0px 10px;
+`;
+
+const WeatherHighlightDailyContainer = styled.div``;
+
+const IntraDayWeatherContainer = styled.div``;
+
+const IntraWeekWeatherContainer = styled.div``;
 
 const APIKEY = "cb003ec57d263f77619fc9e12e90b5a4";
 const unit = "metric";
-
-const weatherClasses = {
-  "clear sky": "clear-sky",
-};
 
 const WeatherApp = (props) => {
   const [weather, setWeather] = useState({});
@@ -32,42 +58,18 @@ const WeatherApp = (props) => {
 
   console.log({ latLng: position });
 
-  if (!loaded) {
-    return <div>Loading...</div>;
-  } else {
-    return (
-      <div
-        className={`main-wrapper ${weather.current.weather[0].description.replace(
-          " ",
-          "-"
-        )}`}
-      >
-        <div className="main-search-wrapper">
-          <AddressSearch setLatLng={setPosition} />
-        </div>
-
-        <div className="main-address-wrapper">
-          <h1>{weather.timezone}</h1>
-        </div>
-        <div className="main-temp-wrapper">
-          <div className="current-temp-wrapper">
-            {Math.round(weather.current.temp)}c
-          </div>
-          <div className="current-weather-wrapper">
-            {weather.current.humidity},{weather.current.wind_speed} KPH,
-            {Math.round(weather.current.feels_like)}
-          </div>
-        </div>
-        <div className="main-hourly-wrapper"></div>
-        <div className="main-weekly-wrapper"></div>
-        {position && (
-          <div className="">
-            {position.lat} - {position.lng}
-          </div>
-        )}
-      </div>
-    );
-  }
+  return (
+    <WeatherAppContainer>
+      <AddressSearch />
+      <AddressMetaDataContainer>
+        <AddressHeader>Chatswood, NSW, Australia</AddressHeader>
+        <DateHeader>Friday, February 23rd, 2022 | 11:20 am</DateHeader>
+      </AddressMetaDataContainer>
+      <WeatherHighlightDailyContainer></WeatherHighlightDailyContainer>
+      <IntraDayWeatherContainer></IntraDayWeatherContainer>
+      <IntraWeekWeatherContainer></IntraWeekWeatherContainer>
+    </WeatherAppContainer>
+  );
 };
 
 export default WeatherApp;

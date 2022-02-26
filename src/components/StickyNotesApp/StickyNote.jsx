@@ -11,18 +11,10 @@ const defaultSize = {
 const defaultNotes = [
   {
     id: 1,
-    text: "Welcome to my Portfolio!",
-    x: 250,
-    y: 200,
-    width: 500,
-    height: 300,
-  },
-  {
-    id: 2,
-    text: "Hello world!!!",
-    x: 830,
-    y: 100,
-    width: 220,
+    text: "Welcome to my Portfolio! My Name is Lachlan. I'm a full-stack web developer! Here is a link to my GitHub: github.com/t3rrey.",
+    x: 100,
+    y: 70,
+    width: 650,
     height: 200,
   },
 ];
@@ -47,7 +39,6 @@ const StickyNote = () => {
     setNotes([...notes]);
   };
   const onDragResize = (index, event, corner, target, size, position) => {
-    console.log({ event, corner, target, size, position });
     if (!target) {
       target = corner.node;
       position = {
@@ -62,7 +53,6 @@ const StickyNote = () => {
     note.height = target.clientHeight;
     setNotes([...notes]);
   };
-  console.log(notes);
 
   return notes.map((note, index) => (
     <Rnd
@@ -94,7 +84,7 @@ const StickyNote = () => {
         <textarea
           value={note.text}
           className="sticky-content"
-          placeholder="Some text"
+          placeholder="Click here to add text"
           onChange={(event) => updateNote(index, event.target.value)}
         ></textarea>
       </div>
