@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Taskbar from "./components/Taskbar";
+import Taskbar from "./components/Taskbar/Taskbar";
 import WeatherApp from "./components/WeatherApp/WeatherApp";
 import "./styles/App.css";
 import StickyNote from "./components/StickyNotesApp/StickyNote.jsx";

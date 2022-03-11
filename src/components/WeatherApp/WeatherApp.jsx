@@ -7,7 +7,8 @@ import AddressSearch from "./AddressSearch";
 const WeatherAppContainer = styled.div`
   width: 700px;
   height: 500px;
-  background: blue;
+  background: #000033;
+  border-radius: 0px 0px 10px 10px;
 `;
 
 const AddressMetaDataContainer = styled.div``;

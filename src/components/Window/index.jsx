@@ -11,6 +11,7 @@ const Window = (props) => {
           width: props.width,
           height: props.height,
         }}
+        bounds={"parent"}
       >
         <TitleBar width={props.width} />
         {props.component}

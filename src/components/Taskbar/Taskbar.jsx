@@ -1,12 +1,12 @@
 import React from "react";
-import "../styles/taskbar.css";
+import "../../styles/taskbar.css";
 import TaskbarIcon from "./TaskbarIcon";
-import personIcon from "../assets/icons/personIcon.svg";
-import calculatorIcon from "../assets/icons/calculatorIcon.svg";
-import mapIcon from "../assets/icons/mapIcon.svg";
-import stickyNoteIcon from "../assets/icons/stickyNoteIcon.svg";
-import settingsIcon from "../assets/icons/settingsIcon.svg";
-import browserIcon from "../assets/icons/browserIcon.svg";
+import personIcon from "../../assets/icons/personIcon.svg";
+import calculatorIcon from "../../assets/icons/calculatorIcon.svg";
+import mapIcon from "../../assets/icons/mapIcon.svg";
+import stickyNoteIcon from "../../assets/icons/stickyNoteIcon.svg";
+import settingsIcon from "../../assets/icons/settingsIcon.svg";
+import browserIcon from "../../assets/icons/browserIcon.svg";
 
 const Taskbar = ({ addStickyNote, openedApps, setOpenedApps }) => {
   const handleClick = (app) => {
@@ -26,7 +26,7 @@ const Taskbar = ({ addStickyNote, openedApps, setOpenedApps }) => {
         <div className="taskbar-icon-wrapper">
           <TaskbarIcon image={personIcon} onClick={() => {}} />
           <TaskbarIcon
-            image={calculatorIcon} 
+            image={calculatorIcon}
             name="calculator"
             onClick={handleClick}
           />

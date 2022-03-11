@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/taskbarIcon.css";
+import "../../styles/taskbarIcon.css";
 
 const TaskbarIcon = (props) => {
   return (
