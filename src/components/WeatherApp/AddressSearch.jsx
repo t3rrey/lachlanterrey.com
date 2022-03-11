@@ -4,7 +4,9 @@ import PlacesAutocomplete, {
   getLatLng,
 } from "react-places-autocomplete";
 import locationButton from "../../assets/icons/locationButton.svg";
+import styled from "styled-components";
 
+const SearchBarContainer = styled.div``;
 class LocationSearchInput extends React.Component {
   constructor(props) {
     super(props);

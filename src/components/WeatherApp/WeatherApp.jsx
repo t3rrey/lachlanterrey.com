@@ -59,16 +59,18 @@ const WeatherApp = (props) => {
   console.log({ latLng: position });
 
   return (
-    <WeatherAppContainer>
+    <>
       <AddressSearch />
-      <AddressMetaDataContainer>
-        <AddressHeader>Chatswood, NSW, Australia</AddressHeader>
-        <DateHeader>Friday, February 23rd, 2022 | 11:20 am</DateHeader>
-      </AddressMetaDataContainer>
-      <WeatherHighlightDailyContainer></WeatherHighlightDailyContainer>
-      <IntraDayWeatherContainer></IntraDayWeatherContainer>
-      <IntraWeekWeatherContainer></IntraWeekWeatherContainer>
-    </WeatherAppContainer>
+      <WeatherAppContainer>
+        <AddressMetaDataContainer>
+          <AddressHeader>Chatswood, NSW, Australia</AddressHeader>
+          <DateHeader>Friday, February 23rd, 2022 | 11:20 am</DateHeader>
+        </AddressMetaDataContainer>
+        <WeatherHighlightDailyContainer></WeatherHighlightDailyContainer>
+        <IntraDayWeatherContainer></IntraDayWeatherContainer>
+        <IntraWeekWeatherContainer></IntraWeekWeatherContainer>
+      </WeatherAppContainer>
+    </>
   );
 };
 

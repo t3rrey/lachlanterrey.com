@@ -5,7 +5,7 @@ import "./styles/App.css";
 import StickyNote from "./components/StickyNotesApp/StickyNote.jsx";
 import NewPDF from "./components/PDFViewer/NewPDF";
 import Dropzone from "./components/PDFViewer/Dropzone";
-
+import Window from "./components/Window";
 function App() {
   const [openedApps, setOpenedApps] = useState([]);
   const [pdf, setPdf] = useState();
@@ -13,9 +13,14 @@ function App() {
   return (
     <div className="App">
       <StickyNote />
+
       <Dropzone onDrop={setPdf} />
-      {/* PDF */} {pdf && <NewPDF pdf={pdf} />}
-      {/* Sticky notes */} {openedApps.includes("weather") && <WeatherApp />}
+
+      {pdf && <NewPDF pdf={pdf} />}
+
+      {openedApps.includes("weather") && (
+        <Window component={<WeatherApp />} height={500} width={700} />
+      )}
       {/* Taskbar */}
       <Taskbar openedApps={openedApps} setOpenedApps={setOpenedApps} />
     </div>

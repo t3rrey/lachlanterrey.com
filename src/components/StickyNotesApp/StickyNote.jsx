@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../../styles/stickynote.css";
-import crossIcon from "../../assets/icons/crossIcon.svg";
+import crossIcon from "../../assets/icons/titlebar/crossIcon.svg";
 import plusIcon from "../../assets/icons/plusIcon.svg";
 import { Rnd } from "react-rnd";
 

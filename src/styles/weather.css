@@ -1,58 +1,61 @@
 .main-wrapper {
-    background: white;
-    width: 65vw;
-    height: 50vh;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    margin-top: 0px;
-    background-size: cover;
-    background-position: center;
+  background: white;
+  width: 65vw;
+  height: 50vh;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 0px;
+  background-size: cover;
+  background-position: center;
 }
 
 .main-wrapper.clear-sky {
-    background-image: url("../assets/weather-backgrounds/cloudy-day.jpg");
+  background-image: url("../assets/weather-backgrounds/cloudy-day.jpg");
 }
 
-.main-search-wrapper {}
+.main-search-wrapper {
+}
 
 .search-wrapper {
-    margin: 5px;
-    border: 1px solid grey;
-    border-radius: 25px;
-    background: grey;
-    display: flex;
-    flex-direction: row;
-    position: relative;
+  border-radius: 25px;
+  background: white;
+  margin: auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  position: relative;
 }
 
 .autocomplete-dropdown-container {
-    position: absolute;
-    width: 100%;
-    top: 25px;
-    border: 1px solid #ccc;
-    border-top: 0;
-    background: #eee;
-    border-radius: 0 0 15px 15px;
-    overflow: hidden;
+  position: absolute;
+  width: 100%;
+  top: 25px;
+  border: 1px solid #ccc;
+  border-top: 0;
+  background: #eee;
+  border-radius: 0 0 15px 15px;
+  overflow: hidden;
 }
 
 .search-wrapper.searching {
-    border-radius: 15px 15px 0 0;
+  border-radius: 15px 15px 0 0;
 }
 
 .search-wrapper input {
-    flex-grow: 2;
-    padding: 5px;
-    border: none;
-    border-radius: 25px;
-    background: none;
+  flex-grow: 2;
+  padding: 5px;
+  border: none;
+  border-radius: 25px;
+  background: none;
 }
 
 .search-wrapper input:focus {
-    outline: none;
+  outline: none;
 }
 
 .search-wrapper img {
-    padding-right: 5px;
+  padding-right: 5px;
 }
