@@ -6,6 +6,7 @@ import StickyNote from "./components/StickyNotesApp/StickyNote.jsx";
 import NewPDF from "./components/PDFViewer/NewPDF";
 import Dropzone from "./components/PDFViewer/Dropzone";
 import Window from "./components/Window";
+import Calculator from "./components/Calculator";
 function App() {
   const [openedApps, setOpenedApps] = useState([]);
   const [pdf, setPdf] = useState();
@@ -13,6 +14,7 @@ function App() {
   return (
     <div className="App">
       <StickyNote />
+      <Calculator />
 
       <Dropzone onDrop={setPdf} />
 
