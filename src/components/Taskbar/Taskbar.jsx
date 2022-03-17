@@ -28,7 +28,7 @@ const Taskbar = ({ addStickyNote, openedApps, setOpenedApps }) => {
           <TaskbarIcon
             image={calculatorIcon}
             name="calculator"
-            onClick={handleClick}
+            onClick={() => handleClick("calculator")}
           />
           <TaskbarIcon image={browserIcon} />
           <TaskbarIcon image={mapIcon} onClick={() => handleClick("weather")} />

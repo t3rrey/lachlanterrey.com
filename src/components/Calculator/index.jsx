@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useState } from "react";
 import styled from "styled-components";
 
 import "./calculator.css";
@@ -24,16 +24,20 @@ const CalculatorButtonsContainer = styled.div`
   gap: 10px;
 `;
 
+const CalculatorButton = styled.button`
+  height: 90px;
+  width: 90px;
+  border: none;
+  border-radius: 10px;
+  background: rgb(12, 40, 137);
+  color: white;
+`;
+
 const Calculator = () => {
   const btnsRef = useRef(null);
   const expRef = useRef(null);
 
   const [expression, setExpression] = useState("");
-
-  useEffect(() => {
-    const btns = Array.from(btnsRef.current.querySelectorAll("button"));
-    btns.forEach((e) => (e.style.height = e.offsetWidth + "px"));
-  }, []);
 
   const btnClick = (item) => {
     const expDiv = expRef.current;
@@ -112,13 +116,9 @@ const Calculator = () => {
       </div>
       <CalculatorButtonsContainer ref={btnsRef}>
         {btns.map((item, index) => (
-          <button
-            key={index}
-            className={item.class}
-            onClick={() => btnClick(item)}
-          >
+          <CalculatorButton key={index} onClick={() => btnClick(item)}>
             {item.display}
-          </button>
+          </CalculatorButton>
         ))}
       </CalculatorButtonsContainer>
     </CalculatorContainer>

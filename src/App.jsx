@@ -14,7 +14,10 @@ function App() {
   return (
     <div className="App">
       <StickyNote />
-      <Window component={<Calculator />} height={650} width={400} />
+
+      {openedApps.includes("calculator") && (
+        <Window component={<Calculator />} height={670} width={420} />
+      )}
 
       <Dropzone onDrop={setPdf} />
 
