@@ -7,16 +7,15 @@ import mapIcon from "../../assets/icons/mapIcon.svg";
 import stickyNoteIcon from "../../assets/icons/stickyNoteIcon.svg";
 import settingsIcon from "../../assets/icons/settingsIcon.svg";
 import browserIcon from "../../assets/icons/browserIcon.svg";
+import applications from "../../lib";
 
 const Taskbar = ({ addStickyNote, openedApps, setOpenedApps }) => {
   const handleClick = (app) => {
     setOpenedApps((apps) => {
-      // Already opened => Now close
-      if (apps.includes(app)) {
-        return apps.filter((appName) => appName !== app);
-      } else {
-        return [...apps, app];
+      if (apps.includes(applications[app])) {
+        return apps.filter((appName) => appName.name !== app);
       }
+      return [...apps, applications[app]];
     });
   };
 

@@ -1,20 +1,18 @@
 import { createContext, useState, useEffect } from "react";
-
+import applications from "../lib";
 const Context = createContext();
 
 export function Provider(props) {
   const [openApplications, setOpenApplications] = useState([
-    {
-      name: "stickyNotes",
-      width: 500,
-      height: 500,
-      sessions: 1,
-      maximised: false,
-      minimised: false,
-      titleBarStyle: "#ffffff",
-    },
+    applications["stickyNotes"],
   ]);
-  return <Context.Provider value={openApplications} {...props} />;
+
+  const contextValue = {
+    openApplications,
+    setOpenApplications,
+  };
+  console.log("Cstate", openApplications);
+  return <Context.Provider value={contextValue} {...props} />;
 }
 
 export default Context;
