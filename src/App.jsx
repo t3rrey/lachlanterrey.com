@@ -9,6 +9,7 @@ import Window from "./components/Window";
 import Calculator from "./components/Calculator";
 import Context from "./context/OpenApplicationsContext";
 import applications from "./lib";
+import MyEditor from "./components/Editor";
 function App() {
   const { openApplications, setOpenApplications } = useContext(Context);
   const [pdf, setPdf] = useState();
@@ -18,20 +19,18 @@ function App() {
   }, [openApplications]);
   return (
     <div className="App">
-      <StickyNote />
+      <MyEditor />
+      {openApplications.includes(applications["stickyNotes"]) && <StickyNote />}
 
-      {/*openApplications.includes(applications["calculator"]) && (
+      {openApplications.includes(applications["calculator"]) && (
         <Window component={<Calculator />} height={670} width={420} />
-      ) */}
+      )}
 
-      <Dropzone onDrop={setPdf} />
-
-      {pdf && <NewPDF pdf={pdf} />}
-
-      {/* openApplications.includes("weather") && (
+      {openApplications.includes(applications["weather"]) && (
         <Window component={<WeatherApp />} height={500} width={700} />
-      )*/}
-      {/* Taskbar */}
+      )}
+      {pdf && <NewPDF pdf={pdf} />}
+      <Dropzone onDrop={setPdf} />
       <Taskbar
         openedApps={openApplications}
         setOpenedApps={setOpenApplications}

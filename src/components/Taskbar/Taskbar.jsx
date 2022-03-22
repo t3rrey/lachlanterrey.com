@@ -23,16 +23,23 @@ const Taskbar = ({ addStickyNote, openedApps, setOpenedApps }) => {
     <div className="main-taskbar-wrapper">
       <div className="taskbar">
         <div className="taskbar-icon-wrapper">
-          <TaskbarIcon image={personIcon} onClick={() => {}} />
+          <TaskbarIcon image={personIcon} />
           <TaskbarIcon
             image={calculatorIcon}
-            name="calculator"
             onClick={() => handleClick("calculator")}
           />
-          <TaskbarIcon image={browserIcon} />
+          <TaskbarIcon
+            image={browserIcon}
+            onClick={() => handleClick("browser")}
+          />
           <TaskbarIcon image={mapIcon} onClick={() => handleClick("weather")} />
           <TaskbarIcon image={stickyNoteIcon} onClick={addStickyNote} />
-          <TaskbarIcon image={settingsIcon} onClick={() => {}} />
+          <TaskbarIcon
+            image={settingsIcon}
+            onClick={() => {
+              handleClick("settings");
+            }}
+          />
         </div>
       </div>
     </div>
