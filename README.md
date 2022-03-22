@@ -1,8 +1,10 @@
 # webhouse
 
+webhouse runs in a browser and visually operates similarly to how macOS operates. The desktop environment includes a weather app, calculator, browser, sticky notes and PDF reader. 
+
 ### ⚡️ Breakdown
 
-webhouse is runs in browser and operates similarly to how macOS operates. This project came as a result of a video the YouTube rabbit hole led be to by Dustin Brett. His project daedalOS inspired me to create my own interpretation. My project is heavily inspired by his work. I even reached out a couple of times for how he made architecture decisions. Please check out his project it is amazing!
+This project came as a result of a video I came across thanks to the YouTube rabbit hole led me to a video by [Dustin Brett](https://www.youtube.com/c/DustinBrett). His project [daedalOS](https://github.com/DustinBrett/daedalOS) inspired me to create my own interpretation. My project is heavily inspired by his work. I even reached out a couple of times for how he made architecture decisions and his approached solving certain issues. Please check out his project it is amazing!
 
 #### :computer: Technology
 
@@ -10,10 +12,6 @@ The project is fully client side. React and styled components have been implemen
 
 ##### React:
 React was my front end framework of choice as it is what I have the most experience with, and I felt was the best way to manage the application state. 
-###### Styled Components:
+##### Styled Components:
+The main reason for the design choice is the reusability of styling and the readability of the code. Features such as unique class names and purged CSS were also a factor in the decision to adopt this framework. 
 
-#### How to run
-
-All your files and folders are presented as a tree in the file explorer. You can switch from one to another by clicking a file in the tree.
-
-#### Architecture
