@@ -16,6 +16,8 @@ function App() {
 
   useEffect(() => {
     console.log("UseEffect", openApplications);
+
+    console.log("io", openApplications.indexOf("stickyNotes"));
   }, [openApplications]);
   return (
     <div className="App">
@@ -23,7 +25,7 @@ function App() {
       {openApplications.includes(applications["stickyNotes"]) && <StickyNote />}
 
       {openApplications.includes(applications["calculator"]) && (
-        <Window component={<Calculator />} height={670} width={420} />
+        <Window component={<Calculator />} height={500} width={300} />
       )}
 
       {openApplications.includes(applications["weather"]) && (

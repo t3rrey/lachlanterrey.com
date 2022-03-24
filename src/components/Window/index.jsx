@@ -6,8 +6,8 @@ const Window = (props) => {
     <>
       <Rnd
         default={{
-          x: 500,
-          y: 300,
+          x: 200,
+          y: 150,
           width: props.width,
           height: props.height,
         }}

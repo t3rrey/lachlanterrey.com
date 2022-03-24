@@ -1,11 +1,7 @@
-import { Editor, EditorState } from "draft-js";
-import React, { useState } from "react";
-import "draft-js/dist/Draft.css";
+import React from "react";
 
-export default function MyEditor() {
-  const [editorState, setEditorState] = useState(() =>
-    EditorState.createEmpty()
-  );
+const Editor = () => {
+  return <div>Editor</div>;
+};
 
-  return <Editor editorState={editorState} onChange={setEditorState} />;
-}
+export default Editor;

@@ -6,9 +6,8 @@ import "./calculator.css";
 import { btns, BTN_ACTIONS } from "./btnConfig";
 
 const CalculatorContainer = styled.div`
-  padding: 10px;
-  height: 650px;
-  width: 400px;
+  padding: 5px;
+  height: calc(100% - 30px);
   overflow: hidden;
   border-radius: 0px 0px 10px 10px;
   background-color: rgb(0, 39, 46);
@@ -19,14 +18,13 @@ const CalculatorContainer = styled.div`
 `;
 
 const CalculatorButtonsContainer = styled.div`
+  height: 60%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+  gap: 5px;
 `;
 
 const CalculatorButton = styled.button`
-  height: 90px;
-  width: 90px;
   border: none;
   border-radius: 10px;
   background: rgb(12, 40, 137);
