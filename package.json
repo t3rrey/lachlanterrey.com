@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@editorjs/editorjs": "^2.23.2",
+    "@editorjs/header": "^2.6.2",
+    "@editorjs/list": "^1.7.0",
     "@mapbox/mapbox-gl-directions": "^4.1.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -24,6 +27,8 @@
     "react-rnd": "^10.3.4",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "slate": "^0.75.0",
+    "slate-react": "^0.75.0",
     "styled-components": "^5.3.3",
     "web-vitals": "^1.0.1"
   },
