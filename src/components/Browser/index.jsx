@@ -1,6 +1,6 @@
 import React from "react";
 import { Rnd } from "react-rnd";
-const Browser = () => {
+const Browser = (props) => {
   return (
     <Rnd>
       <div>

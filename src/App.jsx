@@ -21,7 +21,6 @@ function App() {
   }, [openApplications]);
   return (
     <div className="App">
-      <MyEditor />
       {openApplications.includes(applications["stickyNotes"]) && <StickyNote />}
 
       {openApplications.includes(applications["calculator"]) && (
